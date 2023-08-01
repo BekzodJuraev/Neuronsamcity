@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        {% for item in teacher %}
+
+        <h1>{{item.title}}</h1>
+        <p>{{item.content}}</p>
+
+         <img src="{{item.photo.url}}" alt="asdasd" width="100px%" height="100px">
+
+
+
+        {% endfor %}
+</body>
+</html>

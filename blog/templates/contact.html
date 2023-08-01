@@ -1,0 +1,141 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block title %}
+{{title}}
+{% endblock%}
+{% block content %}
+
+
+<section class="banner_area">
+      <div class="banner_inner d-flex align-items-center">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <div class="banner_content text-center">
+                <h2>Контакты</h2>
+                <div class="page_link">
+                  <a href="{% url 'home'%}">Главная</a>
+                  <a href="{% url 'contact'%}">Контакты</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================End Home Banner Area =================-->
+
+    <!--================Contact Area =================-->
+    <section class="contact_area section_gap">
+      <div class="container">
+        <div
+          id="mapBox"
+          class="mapBox"
+          data-lat="39.642704"
+          data-lon="66.941216"
+          data-zoom="18"
+
+          data-mlat="39.642704"
+          data-mlon="66.941216"
+        ></div>
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="contact_info">
+              <div class="info_item">
+                <i class="ti-home"></i>
+                <h6>Узбекистан, Самарканд</h6>
+                <p>улица Фирдоуси, 81А</p>
+              </div>
+              <div class="info_item">
+                <i class="ti-headphone"></i>
+                <h6><a href="tel:+998901424242">+998 (90) 191-42-42</a></h6>
+                <h6><a href="tel:+998901424242">+998 (90) 101-07-07</a></h6>
+                <h6><a href="tel:+998901424242">+998 (93) 999-03-53</a></h6>
+                <p>Пн-Сб 9:00-19:00m</p>
+              </div>
+              <div class="info_item">
+                <i class="ti-email"></i>
+                <h6><a href="#">neuronsamcity@mail.ru</a></h6>
+                <p>Почта для информации!</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <form
+              class="row contact_form"
+              action="contact_process.php"
+              method="post"
+              id="contactForm"
+              novalidate="novalidate"
+            >
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter your name'"
+                    required=""
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    placeholder="Enter email address"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter email address'"
+                    required=""
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="subject"
+                    name="subject"
+                    placeholder="Enter Subject"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter Subject'"
+                    required=""
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <textarea
+                    class="form-control"
+                    name="message"
+                    id="message"
+                    rows="1"
+                    placeholder="Enter Message"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter Message'"
+                    required=""
+                  ></textarea>
+                </div>
+              </div>
+              <div class="col-md-12 text-right">
+                <button type="submit" value="submit" class="btn primary-btn">
+                  Задать Вопрос
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+{% endblock %}

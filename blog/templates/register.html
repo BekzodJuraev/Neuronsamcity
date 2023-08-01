@@ -1,0 +1,444 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+{{title}}
+{% endblock%}
+{% block content %}
+<section class="home_banner_area">
+      <div class="banner_inner">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="banner_content text-center">
+                <p class="text-uppercase">
+                  Neuron - инновационный учебный центр в Самарканде
+                </p>
+                <h2 class="text-uppercase mt-4 mb-5">
+                   Ваша дверь в будущее
+                </h2>
+                <div>
+                  <a href="{% url 'about' %}" class="primary-btn2 mb-3 mb-sm-0">Подробнее</a>
+                  <a href="#registration-block" class="primary-btn ml-sm-3 ml-0">Записаться онлайн</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================ End Home Banner Area =================-->
+
+    <!--================ Start Feature Area =================-->
+    <section class="feature_area section_gap_top">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="main_title">
+              <h2 class="mb-3">Что мы предлагаем</h2>
+              <p>
+                 Качественное обучение - залог успеха и карьеры!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="single_feature">
+              <div class="icon"><span class="flaticon-student"></span></div>
+              <div class="desc">
+                <h4 class="mt-3 mb-2">Образовательные курсы</h4>
+                <p>
+                  Наши курсы предназначены для людей, которые изучают новый для себя язык и хотят развивать языковые навыки.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="single_feature">
+              <div class="icon"><span class="flaticon-book"></span></div>
+              <div class="desc">
+                <h4 class="mt-3 mb-2">Дошкольное образование</h4>
+                <p>
+
+Дошкольное образование
+
+Наши преподаватели помогут вашим детям в полной мере развить любовь к учёбе.
+
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="single_feature">
+              <div class="icon"><span class="flaticon-earth"></span></div>
+              <div class="desc">
+                <h4 class="mt-3 mb-2">Обучение за границей</h4>
+                <p>
+
+
+
+Хотите учиться за границей? Мы способны осуществить Ваши мечты, основным критерием для нас является желание студента.
+
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================ End Feature Area =================-->
+
+    <!--================ Start Popular Courses Area =================-->
+    <div class="popular_courses">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="main_title">
+              <h2 class="mb-3">Популярные курсы</h2>
+              <p>
+                Серьёзный опыт, современные и эффективные методы!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- single course -->
+          <div class="col-lg-12">
+            <div class="owl-carousel active_course ">
+
+              {% for item in post %}
+              <div class="single_course">
+                <div class="course_head" >
+                  <img class="img-fluid" src="{{item.photo.url}}" alt=""  width="360" height="283"/>
+                </div>
+                <div class="course_content">
+
+
+                  <h4 class="mb-3">
+                    <a href="{{item.get_absolute_url}}">{{item.title}}</a>
+                  </h4>
+                  <p>
+                   {{item.content|truncatechars_html:150}}
+                  </p>
+                  <div
+                    class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
+
+                    <div class="mt-lg-0 mt-3">
+                      <span class="meta_info mr-4">
+                        <a > <i class="ti-user mr-2"></i>{{item.created_at|date:" d M Y"}}</a>
+                      </span>
+                      <span class="meta_info"
+                        ><a> <i class="ti-heart mr-2"></i>{{item.views}}</a></span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+             {% endfor %}
+
+
+
+
+
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--================ End Popular Courses Area =================-->
+
+    <!--================ Start Registration Area =================-->
+    <div id="registration-block" class="section_gap registration_area">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <div class="row clock_sec clockdiv" id="clockdiv">
+              <div class="col-lg-12">
+                <h1 class="mb-3">Онлайн регистрация</h1>
+                <p>
+                  Здесь Вы можете оставить свои контактные данные, через которые мы сможем связаться с вами. Вы можете записаться или записать своих детей на наши курсы не выходя из дома. Просто заполните форму и наш сотрудник обязательно вам перезвонит.
+                </p>
+              </div>
+              <div class="col clockinner1 clockinner">
+                <h1 class="days">150</h1>
+                <span class="smalltext">Филлиала</span>
+              </div>
+              <div class="col clockinner clockinner1">
+                <h1 class="hours">23</h1>
+                <span class="smalltext">Преподавателей</span>
+              </div>
+              <div class="col clockinner clockinner1">
+                <h1 class="minutes">47</h1>
+                <span class="smalltext">Учеников</span>
+              </div>
+              <div class="col clockinner clockinner1">
+                <h1 class="seconds">59</h1>
+                <span class="smalltext">Аудитории</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 offset-lg-1">
+            <div class="register_form">
+              <h3>Контактные данные</h3>
+              <p>Мы с вами свяжемся</p>
+              <form
+                class="form_area"
+                id="myForm"
+                action="mail.html"
+                method="post"
+              >
+                <div class="row">
+                  <div class="col-lg-12 form_group">
+                      {% csrf_token %}
+                     {{ form.username }}
+                    <input
+                      name="name"
+                      placeholder="Ваша фамилия"
+                      required=""
+                      type="tel"
+                    />
+                    <input
+                      name="email"
+                      placeholder="Номер телефона"
+                      pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
+                      required=""
+                      type="email"
+                    />
+                  </div>
+                  <div class="col-lg-12 text-center">
+                    <button class="primary-btn">Отправить</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--================ End Registration Area =================-->
+
+    <!--================ Start Trainers Area =================-->
+    <section class="trainer_area section_gap_top">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="main_title">
+              <h2 class="mb-3">НАШИ УЧИТЕЛЯ</h2>
+              <p>
+                Replenish man have thing gathering lights yielding shall you
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center d-flex align-items-center">
+            {% for item in teacher %}
+       <div class="col-lg-3 col-md-6 col-sm-12 single-trainer">
+            <div class="thumb d-flex justify-content-sm-center">
+              <img class="img-fluid" src="{{item.photo.url}}" alt=""  width="263" height="223"/>
+            </div>
+            <div class="meta-text text-sm-center">
+              <h4>{{item.title}}</h4>
+
+              <div class="mb-4">
+                <p>
+                  {{item.content|truncatechars_html:100 }}
+                </p>
+              </div>
+              <div class="align-items-center justify-content-center d-flex">
+                <a href="#"><i class="ti-facebook"></i></a>
+                <a href="#"><i class="ti-twitter"></i></a>
+                <a href="#"><i class="ti-linkedin"></i></a>
+                <a href="#"><i class="ti-pinterest"></i></a>
+              </div>
+            </div>
+          </div>
+         {% endfor %}
+
+
+
+        </div>
+
+      </div>
+    </section>
+    <!--================ End Trainers Area =================-->
+
+    <!--================ Start Events Area =================-->
+    <div class="events_area">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="main_title">
+              <h2 class="mb-3 text-white">Открытый набор</h2>
+              <p>
+                 Успей записаться в группу и начни уже сейчас!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <div class="single_event position-relative">
+              <div class="event_thumb">
+                <img src="{% static 'img/event/e1.jpg' %}" alt="" />
+              </div>
+              <div class="event_details">
+                <div class="d-flex mb-4">
+                  <div class="date"><span>15</span> Jun</div>
+
+                  <div class="time-location">
+                    <p>
+                      <span class="ti-time mr-2"></span> 12:00 AM - 12:30 AM
+                    </p>
+                    <p>
+                      <span class="ti-location-pin mr-2"></span> Hilton Quebec
+                    </p>
+                  </div>
+                </div>
+                <p>
+                  One make creepeth man for so bearing their firmament won't
+                  fowl meat over seas great
+                </p>
+                <a href="#" class="primary-btn rounded-0 mt-3">View Details</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="single_event position-relative">
+              <div class="event_thumb">
+                <img src="{% static 'img/event/e2.jpg' %}" alt="" />
+              </div>
+              <div class="event_details">
+                <div class="d-flex mb-4">
+                  <div class="date"><span>15</span> Jun</div>
+
+                  <div class="time-location">
+                    <p>
+                      <span class="ti-time mr-2"></span> 12:00 AM - 12:30 AM
+                    </p>
+                    <p>
+                      <span class="ti-location-pin mr-2"></span> Hilton Quebec
+                    </p>
+                  </div>
+                </div>
+                <p>
+                  One make creepeth man for so bearing their firmament won't
+                  fowl meat over seas great
+                </p>
+                <a href="#" class="primary-btn rounded-0 mt-3">View Details</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-12">
+            <div class="text-center pt-lg-5 pt-3">
+              <a href="#" class="event-link">
+                View All Event <img src="{% static 'img/next.png' %}" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--================ End Events Area =================-->
+
+    <!--================ Start Testimonial Area =================-->
+    <div class="popular_courses" style="margin-top:100px">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="main_title">
+              <h2 class="mb-3">Последние новости</h2>
+              <p>
+                 Образование в ногу со временем!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- single course -->
+          <div class="col-lg-12">
+            <div class="owl-carousel active_course">
+              {% for item in news %}
+              <div class="single_course">
+                <div class="course_head">
+                  <img class="img-fluid" src="{{item.photo.url}}" alt=""  width="360" height="283"/>
+                </div>
+                <div class="course_content">
+
+
+                  <h4 class="mb-3">
+                    <a href="{% url 'home' %}">{{item.title}}</a>
+                  </h4>
+                  <p>
+                   {{item.content|truncatechars_html:150}}
+                  </p>
+                  <div
+                    class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
+
+                    <div class="mt-lg-0 mt-3">
+                      <span class="meta_info mr-4">
+                        <a > <i class="ti-user mr-2"></i>{{item.created_at|date:" d M Y"}}</a>
+                      </span>
+                      <span class="meta_info"
+                        ><a> <i class="ti-heart mr-2"></i>{{item.views}}</a></span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+             {% endfor %}
+
+
+
+
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!--================ Start Testimonial Area =================-->
+    <div class="testimonial_area section_gap">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="main_title">
+              <h2 class="mb-3">Отзывы</h2>
+              <p>
+                Replenish man have thing gathering lights yielding shall you
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="testi_slider owl-carousel">
+            {% for item in feedback %}
+            <div class="testi_item">
+              <div class="row">
+                <div class="col-lg-4 col-md-6">
+                  <img src="{{item.photo.url}}" alt="{{item.title}}" />
+                </div>
+                <div class="col-lg-8">
+                  <div class="testi_text">
+                    <h4>{{item.title}}</h4>
+                    <p>
+                      {{item.content}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

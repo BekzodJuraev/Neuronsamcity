@@ -1,0 +1,101 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block title %}
+{{title}}
+{% endblock%}
+{% block content %}
+
+    <!--================ End Header Menu Area =================-->
+
+    <!--================Home Banner Area =================-->
+    <section class="banner_area">
+      <div class="banner_inner d-flex align-items-center">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <div class="banner_content text-center">
+                <h2>О нас </h2>
+                <div class="page_link">
+                  <a href="{% url 'home'%}">Главная</a>
+                  <a href="{% url 'about' %}">О нас</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================End Home Banner Area =================-->
+
+    <!--================ Start About Area =================-->
+    <section class="about_area section_gap">
+      <div class="container">
+         {% for item in about %}
+        <div class="row h_blog_item">
+          <div class="col-lg-6">
+            <div class="h_blog_img">
+              <img class="img-fluid" src="{{item.photo.url}}" alt="{{item.title}}" />
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="h_blog_text">
+              <div class="h_blog_text_inner left right">
+                <h4>{{item.title}}</h4>
+                <p>
+                 {{item.content}}
+                </p>
+
+
+              </div>
+            {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================ End About Area =================-->
+
+    <!--================ Start Feature Area =================-->
+
+    <!--================ End Feature Area =================-->
+
+    <!--================ Start Testimonial Area =================-->
+        <div class="testimonial_area section_gap">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="main_title">
+              <h2 class="mb-3">Отзывы</h2>
+              <p>
+                Replenish man have thing gathering lights yielding shall you
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="testi_slider owl-carousel">
+            {% for item in feedback %}
+            <div class="testi_item">
+              <div class="row">
+                <div class="col-lg-4 col-md-6">
+                  <img src="{{item.photo.url}}" alt="{{item.title}}" />
+                </div>
+                <div class="col-lg-8">
+                  <div class="testi_text">
+                    <h4>{{item.title}}</h4>
+                    <p>
+                      {{item.content}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
