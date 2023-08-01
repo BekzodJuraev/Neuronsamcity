@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <script src="//code-ya.jivosite.com/widget/PzMxWcDnkm" async></script>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png" />
+    <title>{% block title %} Neyron {% endblock%}</title>
+    <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+      <link rel="stylesheet" href="{% static 'css/flaticon.css'%}" />
+      <link rel="stylesheet" href="{% static 'css/themify-icons.css'%}" />
+      <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css'%}" />
+      <link rel="stylesheet" href="{% static 'vendors/nice-select/css/nice-select.css'%}" />
+      <!-- main css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+
+  <body>
+    <!--================ Start Header Menu Area =================-->
+
+    {% include 'inc/_header.html' %}
+    {% block content %}{% endblock %}
+    <!--================ End Header Menu Area =================-->
+    {% include 'inc/_footer.html' %}
+    <!--================ Start Home Banner Area =================-->
+
+    <!--================ End Testimonial Area =================-->
+
+    <!--================ Start footer Area  =================-->
+
+    <!--================ End footer Area  =================-->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/owl-carousel-thumb.min.js' %}"></script>
+    <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'js/mail-script.js' %}"></script>
+
+
+
+
+    <!--gmaps Js-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+    <script src="{% static 'js/gmaps.min.js' %}"></script>
+    <script src="{% static 'js/theme.js' %}"></script>
+  </body>
+</html>
